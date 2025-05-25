@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSecHub - Pentesting Target</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #35424a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 3px solid #e8491d;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        footer {
+            background: #35424a;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+        .login-form {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background: #e8491d;
+            color: white;
+            border: 0;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background: #333;
+        }
+        .search {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .search input {
+            padding: 8px;
+            width: 50%;
+        }
+        .vulnerable-links {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .vulnerable-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #e8491d;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CyberSecHub</h1>
+            <h2>Pentesting Practice Target</h2>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="search">
+            <h3>Search Products</h3>
+            <form action="search.php" method="GET">
+                <input type="text" name="query" placeholder="Enter search term...">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+
+        <div class="login-form">
+            <h3>Admin Login</h3>
+            <form action="login.php" method="POST">
+                <input type="text" name="username" placeholder="Username">
+                <input type="password" name="password" placeholder="Password">
+                <input type="submit" value="Login">
+            </form>
+            <p>Try common credentials like admin/admin</p>
+        </div>
+
+        <div class="vulnerable-links">
+            <h3>Vulnerable Pages</h3>
+            <a href="products.php?id=1">Product Page</a>
+            <a href="user.php?id=100">User Profile</a>
+            <a href="contact.php">Contact Form</a>
+            <a href="debug.php">Debug Info</a>
+            <a href="oldversion/">Old Version</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <h3>About This Site</h3>
+            <p>This is a deliberately vulnerable website for practicing penetration testing techniques.</p>
+            <p>Feel free to test security vulnerabilities against this site.</p>
+            <p><strong>Disclaimer:</strong> Only test against this specific website. Unauthorized testing against other sites is illegal.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>CyberSecHub &copy; 2025 | Designed for pentesting practice</p>
+        <p>Server: Apache/2.4.41 (Ubuntu) | PHP 7.4.3</p>
+    </footer>
+
+    <!-- Deliberately exposed information -->
+    <div style="display: none;">
+        <!-- Exposed for pentesting practice -->
+        <p>Debug info: Server started 2023-05-20</p>
+        <p>DB Connection: mysql://webuser:weakpass@localhost/webdb</p>
+        <p>Admin email: admin@cybersechub.com</p>
+        <p>Backup file: /backups/db_backup_20230520.sql</p>
+    </div>
+</body>
+</html>
